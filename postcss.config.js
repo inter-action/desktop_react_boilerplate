@@ -1,16 +1,6 @@
 
 // https://github.com/michael-ciniawsky/postcss-load-config
 module.exports = function (ctx) {
-  let pxtorem =
-    require('postcss-pxtorem')({
-      rootValue: 37.5,
-      unitPrecision: 5,
-      propList: ['*'],
-      selectorBlackList: [],
-      replace: true,
-      mediaQuery: false,
-      minPixelValue: 0
-    })
   let config = {
   }
 
@@ -23,7 +13,6 @@ module.exports = function (ctx) {
             'ie >= 11',
           ],
         }),
-        pxtorem,
         require('cssnano')(
           {
             preset: 'default',
