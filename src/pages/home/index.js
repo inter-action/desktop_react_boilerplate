@@ -20,14 +20,19 @@ export class Home extends Component {
           </div>
         </div>
         <div className="footer">
-          <div>
-            <div>我的订单</div>
-          </div>
-          <div>
-            <div>意见反馈</div>
-          </div>
+          <VButton text="我的订单" />
+          <VButton text="意见反馈" />
         </div>
       </div>
     );
   }
+}
+
+
+function VButton({text}){
+  return (
+    <div>
+    <div>{text}</div>
+  </div>
+  )
 }

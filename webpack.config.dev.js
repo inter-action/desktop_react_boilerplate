@@ -18,6 +18,7 @@ module.exports = merge(config, {
       }]
   },
   plugins: [
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {

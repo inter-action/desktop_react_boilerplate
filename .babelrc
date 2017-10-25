@@ -1,20 +1,44 @@
 {
   "presets": [
-    "es2015",
     "stage-2",
-    "react"
-  ],
-  "plugins": [
-    "transform-decorators-legacy", // should always be the first plugin!
-    "transform-async-to-generator",
-    ["transform-runtime", { "polyfill": false, "regenerator": true }]
+    "react",
+    [
+      "env",
+      {
+        "targets": {
+          "node": "current"
+        },
+        "modules": false
+      }
+    ]
   ],
   "env": {
     "development": { // this is default
-
+      "plugins": [
+        "react-hot-loader/babel",
+        "transform-decorators-legacy", // should always be the first plugin!
+        "transform-async-to-generator",
+        [
+          "transform-runtime",
+          {
+            "polyfill": false,
+            "regenerator": true
+          }
+        ]
+      ]
     },
     "production": {
-
+      "plugins": [
+        "transform-decorators-legacy", // should always be the first plugin!
+        "transform-async-to-generator",
+        [
+          "transform-runtime",
+          {
+            "polyfill": false,
+            "regenerator": true
+          }
+        ]
+      ]
     }
-  } 
+  }
 }
