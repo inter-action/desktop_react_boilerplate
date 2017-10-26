@@ -8,7 +8,7 @@ let backlist = ['normalize.css', 'babel-runtime']
 
 const config = {
   entry: {
-    main: process.env.NODE_ENV === 'production' ? './src' : './src/index.dev',
+    main: './src/index',
     vendor: Object.keys(pkg.dependencies).filter(e=> backlist.indexOf(e) == -1),
   },
   output: {

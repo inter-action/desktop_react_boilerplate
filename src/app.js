@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import {Provider} from 'mobx-react'
 
 import Routes from './routes'
@@ -16,7 +17,8 @@ export function App(){
 }
 
 
-export function mountNode(Component, render){
-  render(<Component />, document.querySelector('.app'))
+export function render(Component) {
+  ReactDOM.render(
+      <Component />
+      , document.querySelector('.app'))
 }
-

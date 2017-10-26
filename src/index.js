@@ -1,8 +1,6 @@
-import {render} from 'react-dom'
-
-import {App, mountNode} from './app'
+import { App, render } from './app'
 
 
-window.addEventListener('DOMContentLoaded', ()=>{
-  mountNode(App, render)
+window.addEventListener('DOMContentLoaded', () => {
+    render(App)
 })

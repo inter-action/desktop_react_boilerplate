@@ -5,6 +5,10 @@ let config = require('./webpack.config');
 
 
 module.exports = merge(config, {
+  entry: [
+    'react-hot-loader/patch',
+    './src/dev'
+  ],
   module: {
     rules: [
       {
@@ -23,7 +27,8 @@ module.exports = merge(config, {
   ],
   devServer: {
     contentBase: './build',
-
+    open: true,
+    
     historyApiFallback: true,
     hot: true,
     inline: true,
