@@ -15,5 +15,4 @@ full functionality in [feature/project_scallfolding branch](https://github.com/i
 * postcss:
     * autoprefixer
     * cssnano
-    * pixeltorem
-
+* import modules under src top down using `@/<module_path>`, with vscode support

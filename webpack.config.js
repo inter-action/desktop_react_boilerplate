@@ -15,6 +15,11 @@ const config = {
     path: path.resolve(__dirname, 'build'),
     filename: '[name]-[hash].js',
   },
+  resolve:{
+    alias: {
+      '@': path.resolve('./src'),
+    },
+  },
   module: {
     rules: [
       {
