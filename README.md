@@ -8,6 +8,7 @@ full functionality in [feature/project_scallfolding branch](https://github.com/i
 ## feature
 
 * eslint
+    * variable starts with _ skip `no-unused-vars` rule check
 * babel with await async suppport
 * mobx
 * treeshaking - https://webpack.js.org/guides/tree-shaking/

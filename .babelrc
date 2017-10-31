@@ -47,6 +47,21 @@
           }
         ]
       ]
+    },
+    "test": {
+      "presets": [
+        "stage-2",
+        "react",
+        [
+          "env",
+          {
+            "targets": {
+              "node": "current"
+            },
+            "useBuiltIns": true
+          }
+        ]
+      ]
     }
   }
 }

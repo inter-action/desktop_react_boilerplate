@@ -9,7 +9,8 @@ lint:
 	eslint -c build-scripts/.eslintrc.json build-scripts
 
 test:
-	ava
+	NODE_ENV=test ava
+
 
 clean: 
 	rm -rf build/*

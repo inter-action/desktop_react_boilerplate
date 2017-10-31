@@ -56,7 +56,8 @@
   "license": "ISC",
   "ava": {
     "files": [
-      "build-scripts/**/*.test.js"
+      "build-scripts/**/*.test.js",
+      "src/**/*.test.js"
     ],
     "concurrency": 5,
     "failFast": true,
