@@ -33,11 +33,14 @@
     "eslint-plugin-react": "^7.3.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
     "html-webpack-plugin": "^2.30.1",
     "http-server": "^0.10.0",
     "node-sass": "^4.5.3",
     "postcss-load-config": "^1.2.0",
     "postcss-loader": "^2.0.6",
+    "prettier": "^1.9.2",
     "react-hot-loader": "^3.1.1",
     "resolve-url-loader": "^2.1.0",
     "sass-loader": "^6.0.6",
@@ -54,6 +57,13 @@
   },
   "author": "jing.miao@ele.me",
   "license": "ISC",
+  "lint-staged": {
+    "precommit": "lint-staged",
+    "*.{js,jsx,scss}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "ava": {
     "files": [
       "build-scripts/**/*.test.js",
