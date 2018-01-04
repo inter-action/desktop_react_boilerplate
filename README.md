@@ -18,3 +18,4 @@ full functionality in [feature/project_scallfolding branch](https://github.com/i
     * cssnano
 * import modules under src top down using `@/<module_path>`, with vscode support
 * prettier
+* PWA supported by workbox
