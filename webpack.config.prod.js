@@ -50,7 +50,13 @@ module.exports = merge(config, {
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest'],
     }),
-    new UglifyJSPlugin(),
+    new UglifyJSPlugin({
+      parallel: true,
+      compress: {
+        warnings: false,
+        screw_ie8: true
+      },
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
