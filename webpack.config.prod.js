@@ -57,6 +57,9 @@ module.exports = merge(config, {
         screw_ie8: true
       },
     }),
+    // https://zhuanlan.zhihu.com/p/27980441
+    // scope hoisting
+    new webpack.optimize.ModuleConcatenationPlugin(), 
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
