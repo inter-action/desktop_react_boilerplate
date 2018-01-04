@@ -6,6 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractText = new ExtractTextPlugin('[name].[chunkhash].css')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const config = require('./webpack.config')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const workboxPlugin = require('workbox-webpack-plugin');
 
@@ -56,6 +57,15 @@ module.exports = merge(config, {
         warnings: false,
         screw_ie8: true
       },
+    }),
+    // Make sure that the plugin is after any plugins that add images
+    new ImageminPlugin({
+      jpegtran: {
+        progressive: true,
+      },
+      pngquant: {
+        quality: '60-80'
+      }
     }),
     // https://zhuanlan.zhihu.com/p/27980441
     // scope hoisting
