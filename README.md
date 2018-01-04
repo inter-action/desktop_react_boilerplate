@@ -19,3 +19,10 @@ full functionality in [feature/project_scallfolding branch](https://github.com/i
 * import modules under src top down using `@/<module_path>`, with vscode support
 * prettier
 * PWA supported by workbox
+* image optimization by imaginmin
+* 
+
+
+## enhancement considerations
+* add react-lazy-load package to lazy load images
+
