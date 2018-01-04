@@ -18,19 +18,11 @@ clean:
 
 
 dev:
-	webpack-dev-server --config webpack.config.dev.js --progress
+	webpack-dev-server --config webpack.config.dev.js
 
 # BABEL_ENV=production, shall babel_env missing, node_env should be refered.
 prod: clean
-	NODE_ENV=production webpack --config webpack.config.prod.js --progress
-
-analyze_dep:
-	# check errors in stats.json if webpack bundle failed
-	# webpack-bundle-analyzer --help
-	NODE_ENV=production webpack --config webpack.config.prod.js --profile --json > stats.json
-
-analyze:
-	webpack-bundle-analyzer -h 127.0.0.1 -p 8888 stats.json
+	NODE_ENV=production webpack --config webpack.config.prod.js
 	
 # https://www.npmjs.com/package/http-server
 serve_prod:

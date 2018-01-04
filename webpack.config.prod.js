@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractText = new ExtractTextPlugin('[name].[chunkhash].css')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const config = require('./webpack.config')
-
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = merge(config, {
   module: {
@@ -52,5 +52,6 @@ module.exports = merge(config, {
         NODE_ENV: JSON.stringify('production'),
       },
     }),
+    new BundleAnalyzerPlugin()
   ]
 })
