@@ -12,6 +12,12 @@ module.exports = merge(config, {
   module: {
     rules: [
       {
+        enforce: 'pre',
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      },
+      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
       },
@@ -32,7 +38,7 @@ module.exports = merge(config, {
     historyApiFallback: true,
     hot: true,
     inline: true,
-
+    overlay: true, // display error msg right in the browser's view
     stats: 'errors-only',
 
     host: process.env.HOST,
