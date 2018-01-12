@@ -56,15 +56,18 @@
     "workbox-webpack-plugin": "^2.1.2"
   },
   "scripts": {
+    "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "jing.miao@ele.me",
   "license": "ISC",
   "lint-staged": {
-    "precommit": "lint-staged",
     "*.{js,jsx,scss}": [
       "prettier --write",
       "git add"
+    ],
+    "*.{js,jsx}": [
+      "eslint"
     ]
   },
   "ava": {
