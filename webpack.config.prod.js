@@ -4,7 +4,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractText = new ExtractTextPlugin('[name].[chunkhash].css')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const config = require('./webpack.config')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -51,13 +51,6 @@ module.exports = merge(config, {
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest'],
     }),
-    new UglifyJSPlugin({
-      parallel: true,
-      compress: {
-        warnings: false,
-        screw_ie8: true
-      },
-    }),
     // Make sure that the plugin is after any plugins that add images
     new ImageminPlugin({
       jpegtran: {
@@ -70,6 +63,13 @@ module.exports = merge(config, {
     // https://zhuanlan.zhihu.com/p/27980441
     // scope hoisting
     new webpack.optimize.ModuleConcatenationPlugin(), 
+    new UglifyJsPlugin({
+      parallel: true,
+      uglifyOptions: {
+        ecma: 8,
+        compress: true
+      }
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
